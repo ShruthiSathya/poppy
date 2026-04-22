@@ -1,0 +1,37 @@
+# src/ingestion/cache.py
+import redis
+import hashlib
+import json
+import time
+from functools import wraps
+
+r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+
+def cached_api_call(ttl_seconds: int = 86400 * 30):  # 30-day cache default
+    """
+    Decorator. Wrap any function that calls an external API.
+    Cache key = function name + hash of arguments.
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            key_data = f"{func.__name__}:{json.dumps(args)}:{json.dumps(kwargs, sort_keys=True)}"
+            cache_key = hashlib.md5(key_data.encode()).hexdigest()
+
+            cached = r.get(cache_key)
+            if cached:
+                return json.loads(cached)
+
+            # Rate limit: 1 request per 0.5 seconds per function
+            time.sleep(0.5)
+            result = func(*args, **kwargs)
+
+            r.setex(cache_key, ttl_seconds, json.dumps(result))
+            return result
+        return wrapper
+    return decorator
+
+# Usage — wraps any API function automatically:
+# @cached_api_call(ttl_seconds=86400*7)
+# def get_chembl_targets(chembl_id: str) -> list:
+#     ...
