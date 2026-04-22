@@ -1,25 +1,14 @@
 # scripts/build_ground_truth.py
 """
-Fully programmatic ground truth builder.
-No hardcoded IDs. Every pair is fetched and verified from authoritative sources.
-
-Sources:
-  Positives → OpenTargets GraphQL (approved drugs × rare diseases)
-  Negatives → ClinicalTrials.gov v2 API (terminated Phase 3, lack of efficacy)
-
-Run:
-  python scripts/build_ground_truth.py
-
-Outputs:
-  data/ground_truth/positives_raw.csv      <- review before loading
-  data/ground_truth/negatives_raw.csv      <- review before loading
+Ground truth from two sources:
+  Positives → ChEMBL drug_indication API (max_phase=4, approved)
+  Negatives → ClinicalTrials.gov (Phase 3 terminated, lack of efficacy)
+              + ChEMBL Phase 3 never approved (fallback)
 """
 
 import requests
 import pandas as pd
 import time
-import psycopg2
-import os
 import logging
 from pathlib import Path
 from dotenv import load_dotenv
@@ -30,427 +19,411 @@ log = logging.getLogger(__name__)
 
 Path("data/ground_truth").mkdir(parents=True, exist_ok=True)
 
-OPENTARGETS_API = "https://api.platform.opentargets.org/api/v4/graphql"
 
+# ─────────────────────────────────────────────────────────────
+# SOURCE 1: CHEMBL — Positives
+# ─────────────────────────────────────────────────────────────
 
-# ══════════════════════════════════════════════════════════════════════════════
-# SOURCE 1: OPENTARGETS — Positives (approved drugs × rare diseases)
-# ══════════════════════════════════════════════════════════════════════════════
-
-def fetch_opentargets_approved_drugs(max_diseases: int = 200) -> list[dict]:
-    """
-    Step 1: Fetch all diseases from OpenTargets that have Orphanet cross-references.
-    Step 2: For each rare disease, fetch its approved drugs (Phase 4).
-    Returns ChEMBL IDs + ORPHA IDs — both verified by OpenTargets curators.
-    """
-
-    log.info("Fetching rare diseases from OpenTargets...")
-
-    # Correct OpenTargets v4 GraphQL — no filter argument on diseases()
-    disease_query = """
-    {
-      diseases(page: { size: 500, index: 0 }) {
-        count
-        rows {
-          id
-          name
-          dbXRefs
-        }
-      }
-    }
-    """
-
-    resp = requests.post(
-        OPENTARGETS_API,
-        json={"query": disease_query},
-        headers={"Content-Type": "application/json"},
-        timeout=30
-    )
-    resp.raise_for_status()
-    data = resp.json()
-
-    if "errors" in data:
-        log.error(f"GraphQL error: {data['errors']}")
-        raise ValueError("OpenTargets disease query failed — check API")
-
-    diseases = data.get("data", {}).get("diseases", {}).get("rows", [])
-    log.info(f"Retrieved {len(diseases)} diseases from OpenTargets")
-
-    # Keep only diseases with an Orphanet cross-reference
-    orphanet_diseases = []
-    for d in diseases:
-        xrefs = d.get("dbXRefs", []) or []
-        orphanet_refs = [x for x in xrefs if "Orphanet" in x]
-        if orphanet_refs:
-            # Normalise to ORPHA:12345 format
-            raw = orphanet_refs[0]
-            orphanet_id = raw.replace("Orphanet:", "ORPHA:").replace("Orphanet_", "ORPHA:")
-            orphanet_diseases.append({
-                "efo_id": d["id"],
-                "disease_name": d["name"],
-                "orphanet_id": orphanet_id,
-            })
-
-    log.info(f"Found {len(orphanet_diseases)} rare diseases with Orphanet IDs")
-
-    # For each rare disease fetch its known approved drugs
-    drug_query = """
-    query ApprovedDrugs($diseaseId: String!) {
-      disease(efoId: $diseaseId) {
-        id
-        name
-        knownDrugs(size: 50) {
-          count
-          rows {
-            drug {
-              id
-              name
-              maximumClinicalTrialPhase
-              isApproved
-            }
-            phase
-            status
-            drugType
-            mechanismOfAction
-          }
-        }
-      }
-    }
-    """
-
+def fetch_chembl_positives() -> list[dict]:
+    base = "https://www.ebi.ac.uk/chembl/api/data/drug_indication"
     all_pairs = []
+    offset = 0
+    limit = 1000
+    total = None
 
-    for i, disease in enumerate(orphanet_diseases[:max_diseases]):
+    log.info("Fetching approved drug-disease pairs from ChEMBL...")
+
+    while True:
         try:
-            resp = requests.post(
-                OPENTARGETS_API,
-                json={"query": drug_query,
-                      "variables": {"diseaseId": disease["efo_id"]}},
-                headers={"Content-Type": "application/json"},
-                timeout=20
-            )
+            resp = requests.get(base, params={
+                "max_phase_for_ind": 4,
+                "format": "json",
+                "limit": limit,
+                "offset": offset,
+            }, timeout=30)
             resp.raise_for_status()
-            result = resp.json()
+            data = resp.json()
+        except Exception as e:
+            log.error(f"ChEMBL failed at offset {offset}: {e}")
+            break
 
-            if "errors" in result:
-                log.warning(f"  GraphQL error for {disease['efo_id']}: {result['errors']}")
+        if total is None:
+            total = data.get("page_meta", {}).get("total_count", 0)
+            log.info(f"ChEMBL total approved indications: {total}")
+
+        records = data.get("drug_indications", [])
+        if not records:
+            break
+
+        for rec in records:
+            chembl_id = rec.get("molecule_chembl_id", "")
+            if not chembl_id.startswith("CHEMBL"):
                 continue
 
-            rows = (result.get("data", {})
-                         .get("disease", {})
-                         .get("knownDrugs", {})
-                         .get("rows", []))
+            efo_id       = rec.get("efo_id") or ""
+            mesh_id      = rec.get("mesh_id") or ""
+            mesh_heading = rec.get("mesh_heading") or ""
 
-            for row in rows:
-                drug = row.get("drug", {})
-                phase = row.get("phase") or 0
-                status = row.get("status") or ""
-                chembl_id = drug.get("id", "")
+            if efo_id:
+                disease_id = efo_id
+            elif mesh_id:
+                disease_id = f"MESH:{mesh_id}"
+            else:
+                continue
 
-                # Only approved (Phase 4) small molecules
-                is_approved = (phase >= 4 or "approved" in status.lower()
-                               or drug.get("isApproved") is True)
+            all_pairs.append({
+                "drug_id":      chembl_id,
+                "drug_name":    rec.get("molecule_pref_name") or "",
+                "disease_id":   disease_id,
+                "disease_name": mesh_heading,
+                "efo_id":       efo_id,
+                "mesh_heading": mesh_heading,
+                "max_phase":    rec.get("max_phase_for_ind") or 4,
+                "source":       "ChEMBL_approved",
+                "label":        1,
+            })
 
-                if is_approved and chembl_id.startswith("CHEMBL"):
-                    all_pairs.append({
-                        "drug_id": chembl_id,
-                        "drug_name": drug.get("name", ""),
-                        "disease_id": disease["orphanet_id"],
-                        "disease_efo_id": disease["efo_id"],
-                        "disease_name": disease["disease_name"],
-                        "max_phase": phase,
-                        "status": status,
-                        "drug_type": row.get("drugType", ""),
-                        "mechanism": row.get("mechanismOfAction", ""),
-                        "source": "OpenTargets+Orphanet",
-                        "label": 1,
-                    })
+        offset += limit
+        log.info(f"  {min(offset, total)}/{total} fetched — {len(all_pairs)} pairs collected")
+        time.sleep(0.25)
 
-            if (i + 1) % 20 == 0:
-                log.info(f"  {i+1}/{min(max_diseases, len(orphanet_diseases))} diseases processed "
-                         f"— {len(all_pairs)} pairs so far")
-
-            time.sleep(0.2)
-
-        except Exception as e:
-            log.warning(f"  Skipping {disease['efo_id']}: {e}")
-            continue
+        if offset >= total:
+            break
 
     return all_pairs
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# SOURCE 2: CLINICALTRIALS.GOV — Negatives (Phase 3 efficacy failures)
-# ══════════════════════════════════════════════════════════════════════════════
+# ─────────────────────────────────────────────────────────────
+# RARE DISEASE FILTER
+# ─────────────────────────────────────────────────────────────
 
-def fetch_phase3_failures() -> list[dict]:
-    """
-    Searches ClinicalTrials.gov for terminated Phase 3 rare disease trials.
-    Keeps only trials explicitly stopped for lack of efficacy.
-    """
+RARE_DISEASE_KEYWORDS = [
+    "gaucher", "fabry", "pompe", "niemann-pick", "krabbe",
+    "mucopolysaccharid", "hunter syndrome", "hurler", "morquio",
+    "maroteaux", "sanfilippo", "batten", "wolman",
+    "cystinosis", "glycogen storage",
+    "phenylketonuri", "pku", "maple syrup", "homocystin",
+    "tyrosinemia", "methylmalonic", "propionic acid",
+    "urea cycle", "hyperammonemia", "organic acid",
+    "fatty acid oxidation", "carnitine deficiency",
+    "pulmonary arterial hypertension",
+    "duchenne", "spinal muscular atrophy", "huntington",
+    "friedreich", "spinocerebellar", "charcot-marie",
+    "myasthenia gravis", "lambert-eaton",
+    "dravet", "lennox-gastaut", "tuberous sclerosis",
+    "neurofibromatosis", "sturge-weber",
+    "wilson disease", "menkes",
+    "hemoglobinuria, paroxysmal", "paroxysmal nocturnal",
+    "sickle cell", "thalassemia", "hemophilia",
+    "hereditary angioedema", "thrombotic thrombocytopenic",
+    "marfan", "ehlers-danlos", "osteogenesis imperfect",
+    "cystic fibrosis", "alpha-1 antitrypsin",
+    "acromegaly", "cushing syndrome", "addison",
+    "congenital adrenal hyperplasia",
+    "amyloidosis", "porphyria", "epidermolysis bullosa",
+    "ichthyosis", "xeroderma pigmentosum",
+    "short bowel", "primary hyperoxaluria",
+    "autoimmune hepatitis", "primary biliary",
+    "primary sclerosing cholangitis",
+    "systemic mastocytosis", "myelofibrosis",
+    "aplastic anemia", "fanconi",
+    "transthyretin", "hereditary transthyretin",
+]
 
-    base_url = "https://clinicaltrials.gov/api/v2/studies"
+def is_rare_disease(disease_name: str) -> bool:
+    name_lower = disease_name.lower()
+    return any(kw in name_lower for kw in RARE_DISEASE_KEYWORDS)
 
-    rare_disease_terms = [
-        "rare disease", "orphan disease",
-        "lysosomal storage", "mucopolysaccharidosis",
-        "Gaucher", "Fabry", "Pompe", "Niemann-Pick",
-        "Wilson disease", "phenylketonuria",
-        "pulmonary arterial hypertension",
-        "Huntington disease",
-        "amyotrophic lateral sclerosis",
-        "Duchenne muscular dystrophy",
-        "spinal muscular atrophy",
-        "cystic fibrosis",
-        "tuberous sclerosis",
-        "neurofibromatosis",
+
+# ─────────────────────────────────────────────────────────────
+# SOURCE 2: CLINICALTRIALS.GOV — Negatives
+# ─────────────────────────────────────────────────────────────
+
+def fetch_clinicaltrials_negatives() -> list[dict]:
+    base = "https://clinicaltrials.gov/api/v2/studies"
+
+    EFFICACY_FAIL = [
+        "lack of efficacy", "insufficient efficacy",
+        "failed to demonstrate", "did not meet primary endpoint",
+        "did not meet the primary", "futility", "interim futility",
+        "no significant efficacy", "no efficacy",
+        "negative efficacy", "poor efficacy", "ineffective",
+    ]
+    NOT_EFFICACY = [
+        "business", "funding", "sponsor decision", "administrative",
+        "financial", "slow enrollment", "poor enrollment", "accrual",
+        "safety concern", "adverse event", "toxicity", "covid", "pandemic",
     ]
 
-    EFFICACY_FAILURE_KEYWORDS = [
-        "lack of efficacy",
-        "insufficient efficacy",
-        "failed to demonstrate efficacy",
-        "did not meet primary endpoint",
-        "did not meet the primary endpoint",
-        "negative efficacy",
-        "futility",
-        "interim futility",
-        "no significant difference",
-        "no efficacy",
-        "ineffective",
-        "poor efficacy",
-    ]
-
-    NON_EFFICACY_KEYWORDS = [
-        "business", "funding", "sponsor", "administrative",
-        "company decision", "strategic", "financial",
-        "slow enrollment", "poor enrollment", "accrual",
-        "safety", "adverse", "toxicity", "death",
-        "covid", "pandemic",
+    search_terms = [
+        "gaucher disease", "fabry disease", "pompe disease",
+        "pulmonary arterial hypertension", "duchenne muscular dystrophy",
+        "spinal muscular atrophy", "cystic fibrosis", "huntington disease",
+        "mucopolysaccharidosis", "phenylketonuria", "wilson disease",
+        "hereditary angioedema", "amyloidosis", "tuberous sclerosis",
+        "neurofibromatosis", "lysosomal storage disease",
+        "sickle cell disease", "thalassemia", "hemophilia",
+        "myasthenia gravis", "dravet syndrome",
     ]
 
     all_failures = []
-    seen_nct_ids = set()
+    seen_nct = set()
 
-    for term in rare_disease_terms:
-        log.info(f"  Searching ClinicalTrials: '{term}'")
+    for term in search_terms:
+        log.info(f"  ClinicalTrials searching: '{term}'")
         try:
-            resp = requests.get(base_url, params={
-                "query.cond": term,
+            # KEY FIX: no 'fields' parameter — that's what caused 400 errors
+            resp = requests.get(base, params={
+                "query.cond":          term,
                 "filter.overallStatus": "TERMINATED",
-                "filter.phase": "PHASE3",
-                "fields": ("NCTId,BriefTitle,Condition,InterventionName,"
-                           "InterventionType,WhyStopped,CompletionDate,OverallStatus"),
-                "pageSize": 100,
-                "format": "json",
+                "filter.phase":        "PHASE3",
+                "pageSize":            100,
+                "format":              "json",
             }, timeout=20)
             resp.raise_for_status()
-            data = resp.json()
         except Exception as e:
-            log.warning(f"  ClinicalTrials failed for '{term}': {e}")
+            log.warning(f"  Failed for '{term}': {e}")
+            time.sleep(1)
             continue
 
-        for study in data.get("studies", []):
-            proto = study.get("protocolSection", {})
-            nct_id = proto.get("identificationModule", {}).get("nctId", "")
+        studies = resp.json().get("studies", [])
+        log.info(f"    → {len(studies)} terminated Phase 3 studies found")
 
-            if nct_id in seen_nct_ids:
+        for study in studies:
+            proto  = study.get("protocolSection") or {}
+            nct_id = ((proto.get("identificationModule") or {})
+                      .get("nctId", ""))
+            if not nct_id or nct_id in seen_nct:
                 continue
-            seen_nct_ids.add(nct_id)
+            seen_nct.add(nct_id)
 
-            why_stopped = (proto.get("statusModule", {})
-                               .get("whyStopped", "") or "").lower().strip()
-
-            if not why_stopped:
-                continue
-
-            is_efficacy = any(kw in why_stopped for kw in EFFICACY_FAILURE_KEYWORDS)
-            is_non_efficacy = any(kw in why_stopped for kw in NON_EFFICACY_KEYWORDS)
-
-            if not is_efficacy or is_non_efficacy:
+            why_raw = ((proto.get("statusModule") or {})
+                       .get("whyStopped") or "")
+            why = why_raw.lower().strip()
+            if not why:
                 continue
 
-            conditions = proto.get("conditionsModule", {}).get("conditions", [])
-            interventions = (proto.get("armsInterventionsModule", {})
-                                  .get("interventions", []))
+            is_efficacy = any(kw in why for kw in EFFICACY_FAIL)
+            is_other    = any(kw in why for kw in NOT_EFFICACY)
+            if not is_efficacy or is_other:
+                continue
+
+            conditions    = ((proto.get("conditionsModule") or {})
+                             .get("conditions") or [])
+            interventions = ((proto.get("armsInterventionsModule") or {})
+                             .get("interventions") or [])
 
             for iv in interventions:
                 if iv.get("type") == "DRUG":
                     all_failures.append({
-                        "nct_id": nct_id,
-                        "drug_name_raw": iv.get("name", ""),
-                        "conditions": "; ".join(conditions),
-                        "why_stopped": proto.get("statusModule", {}).get("whyStopped", ""),
-                        "title": proto.get("identificationModule", {}).get("briefTitle", ""),
+                        "nct_id":           nct_id,
+                        "drug_name_raw":    iv.get("name", ""),
+                        "disease_name_raw": "; ".join(conditions),
+                        "why_stopped":      why_raw,
                     })
 
-        time.sleep(0.5)
+        time.sleep(0.4)
 
-    log.info(f"Found {len(all_failures)} candidate Phase 3 failure records")
+    log.info(f"Found {len(all_failures)} efficacy failure records from ClinicalTrials")
     return all_failures
 
 
-def resolve_drug_name_to_chembl(drug_name: str) -> dict | None:
-    """
-    Resolves a free-text drug name from ClinicalTrials to a ChEMBL record.
-    Tries exact name, then synonyms, then partial match (flagged for review).
-    """
+def resolve_name_to_chembl(drug_name: str) -> str:
+    """Resolves a free-text drug name to ChEMBL ID. Returns '' if not found."""
     base = "https://www.ebi.ac.uk/chembl/api/data/molecule"
-
-    # Strategy 1: exact preferred name
-    r = requests.get(base, params={
-        "pref_name__iexact": drug_name, "format": "json", "limit": 3
-    }, timeout=10)
-    if r.status_code == 200:
-        mols = r.json().get("molecules", [])
-        if mols:
-            return _mol_fields(mols[0], review=False)
-
-    time.sleep(0.2)
-
-    # Strategy 2: synonym match
-    r = requests.get(base, params={
-        "molecule_synonyms__synonym__iexact": drug_name,
-        "format": "json", "limit": 3
-    }, timeout=10)
-    if r.status_code == 200:
-        mols = r.json().get("molecules", [])
-        if mols:
-            return _mol_fields(mols[0], review=False)
-
-    time.sleep(0.2)
-
-    # Strategy 3: partial — first word only, flag for manual review
-    r = requests.get(base, params={
-        "pref_name__icontains": drug_name.split()[0],
-        "max_phase__gte": 3,
-        "format": "json", "limit": 3
-    }, timeout=10)
-    if r.status_code == 200:
-        mols = r.json().get("molecules", [])
-        if mols:
-            return _mol_fields(mols[0], review=True)
-
-    return None
+    for param in [
+        {"pref_name__iexact": drug_name},
+        {"molecule_synonyms__synonym__iexact": drug_name},
+    ]:
+        try:
+            resp = requests.get(base,
+                                params={**param, "format": "json", "limit": 1},
+                                timeout=10)
+            if resp.status_code == 200:
+                mols = resp.json().get("molecules", [])
+                if mols:
+                    return mols[0]["molecule_chembl_id"]
+        except Exception:
+            pass
+        time.sleep(0.2)
+    return ""
 
 
-def _mol_fields(mol: dict, review: bool) -> dict:
-    return {
-        "chembl_id": mol.get("molecule_chembl_id", ""),
-        "pref_name": mol.get("pref_name", ""),
-        "molecule_type": mol.get("molecule_type", ""),
-        "max_phase": mol.get("max_phase", 0),
-        "needs_manual_review": review,
-    }
-
-
-def resolve_failures_to_pairs(failures: list[dict]) -> list[dict]:
-    """
-    Converts raw ClinicalTrials failure records into drug_id + disease pairs.
-    Skips biologics. Flags partial name matches for manual review.
-    disease_id is left blank — bio person fills in the Orphanet ID.
-    """
-    resolved = []
-    seen = set()
+def build_negatives_from_ct(failures: list[dict]) -> list[dict]:
+    negatives = []
     cache = {}
+    seen  = set()
 
-    BIOLOGIC_TYPES = {"Protein", "Antibody", "Enzyme", "Oligonucleotide"}
+    BIOLOGIC_HINTS = ["mab", "umab", "zumab", "ximab",
+                      "alfa", "beta", "factor viii", "insulin", "enzyme"]
 
     for f in failures:
-        name = f["drug_name_raw"]
+        name = f["drug_name_raw"].strip()
         if not name:
+            continue
+        if any(h in name.lower() for h in BIOLOGIC_HINTS):
             continue
 
         if name not in cache:
-            log.info(f"  Resolving '{name}'")
-            cache[name] = resolve_drug_name_to_chembl(name)
-            time.sleep(0.3)
+            log.info(f"  Resolving CT drug: '{name}'")
+            cache[name] = resolve_name_to_chembl(name)
 
-        mol = cache[name]
-        if not mol or not mol["chembl_id"]:
-            log.warning(f"  Could not resolve: '{name}'")
+        chembl_id = cache[name]
+        if not chembl_id:
             continue
 
-        if mol["molecule_type"] in BIOLOGIC_TYPES:
-            log.info(f"  Skipping biologic: {name} ({mol['molecule_type']})")
-            continue
-
-        key = f"{mol['chembl_id']}|{f['conditions']}"
+        key = f"{chembl_id}|{f['disease_name_raw']}"
         if key in seen:
             continue
         seen.add(key)
 
-        resolved.append({
-            "drug_id": mol["chembl_id"],
-            "drug_name": mol["pref_name"] or name,
-            "drug_name_raw": name,
-            "molecule_type": mol["molecule_type"],
-            "disease_name_raw": f["conditions"],
-            "disease_id": "",          # Bio person fills this in from orphanet.net
-            "nct_id": f["nct_id"],
-            "why_stopped": f["why_stopped"],
-            "title": f["title"],
-            "needs_manual_review": mol["needs_manual_review"],
-            "label": 0,
-            "source": "ClinicalTrials_Phase3_terminated",
+        negatives.append({
+            "drug_id":      chembl_id,
+            "drug_name":    name,
+            "disease_id":   "",           # bio person fills ORPHA: ID
+            "disease_name": f["disease_name_raw"],
+            "nct_id":       f["nct_id"],
+            "why_stopped":  f["why_stopped"],
+            "source":       "ClinicalTrials_Phase3_terminated",
+            "label":        0,
         })
 
-    return resolved
+    return negatives
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ─────────────────────────────────────────────────────────────
+# SOURCE 3: CHEMBL Phase 3 never approved — fallback negatives
+# ─────────────────────────────────────────────────────────────
+
+def fetch_chembl_phase3_negatives() -> list[dict]:
+    """
+    Pairs that reached Phase 3 but never Phase 4 for rare diseases.
+    Solid computational negatives — tested but never approved.
+    """
+    base = "https://www.ebi.ac.uk/chembl/api/data/drug_indication"
+    all_pairs = []
+    offset = 0
+    limit  = 1000
+    total  = None
+
+    log.info("Fetching Phase 3 (non-approved) rare disease pairs from ChEMBL...")
+
+    while True:
+        try:
+            resp = requests.get(base, params={
+                "max_phase_for_ind": 3,
+                "format": "json",
+                "limit":  limit,
+                "offset": offset,
+            }, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as e:
+            log.error(f"ChEMBL Phase3 fetch failed at offset {offset}: {e}")
+            break
+
+        if total is None:
+            total = data.get("page_meta", {}).get("total_count", 0)
+            log.info(f"ChEMBL Phase 3 total: {total}")
+
+        records = data.get("drug_indications", [])
+        if not records:
+            break
+
+        for rec in records:
+            chembl_id    = rec.get("molecule_chembl_id", "")
+            mesh_heading = rec.get("mesh_heading") or ""
+            efo_id       = rec.get("efo_id") or ""
+            mesh_id      = rec.get("mesh_id") or ""
+
+            if not chembl_id.startswith("CHEMBL"):
+                continue
+            if not is_rare_disease(mesh_heading):
+                continue
+
+            disease_id = efo_id if efo_id else (f"MESH:{mesh_id}" if mesh_id else "")
+            if not disease_id:
+                continue
+
+            all_pairs.append({
+                "drug_id":      chembl_id,
+                "drug_name":    rec.get("molecule_pref_name") or "",
+                "disease_id":   disease_id,
+                "disease_name": mesh_heading,
+                "nct_id":       "",
+                "why_stopped":  "Max phase 3 — never approved",
+                "source":       "ChEMBL_phase3_not_approved",
+                "label":        0,
+            })
+
+        offset += limit
+        log.info(f"  {min(offset, total)}/{total} — {len(all_pairs)} rare phase-3 pairs")
+        time.sleep(0.25)
+
+        if offset >= total:
+            break
+
+    return all_pairs
+
+
+# ─────────────────────────────────────────────────────────────
 # MAIN
-# ══════════════════════════════════════════════════════════════════════════════
+# ─────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
 
-    # ── PHASE A: POSITIVES ────────────────────────────────────────────────────
+    # ── POSITIVES ─────────────────────────────────────────────
     log.info("=" * 60)
-    log.info("PHASE A: Approved drug-disease pairs from OpenTargets")
+    log.info("PHASE A: ChEMBL approved drug-disease pairs")
     log.info("=" * 60)
 
-    positives = fetch_opentargets_approved_drugs(max_diseases=200)
-    log.info(f"OpenTargets returned {len(positives)} pairs before dedup")
+    all_approved = fetch_chembl_positives()
+    log.info(f"Total approved pairs fetched: {len(all_approved)}")
 
-    pos_df = pd.DataFrame(positives)
+    rare_pairs = [p for p in all_approved if is_rare_disease(p["disease_name"])]
+    log.info(f"After rare disease filter: {len(rare_pairs)} pairs")
+
+    pos_df = pd.DataFrame(rare_pairs)
     if not pos_df.empty:
         pos_df.drop_duplicates(subset=["drug_id", "disease_id"], inplace=True)
 
     pos_df.to_csv("data/ground_truth/positives_raw.csv", index=False)
-    log.info(f"Saved {len(pos_df)} unique pairs → data/ground_truth/positives_raw.csv")
+    log.info(f"Saved {len(pos_df)} positives → data/ground_truth/positives_raw.csv")
 
-    # ── PHASE B: NEGATIVES ────────────────────────────────────────────────────
+    # ── NEGATIVES ─────────────────────────────────────────────
     log.info("\n" + "=" * 60)
-    log.info("PHASE B: Phase 3 efficacy failures from ClinicalTrials.gov")
+    log.info("PHASE B: Negatives from ClinicalTrials + ChEMBL Phase 3")
     log.info("=" * 60)
 
-    failures = fetch_phase3_failures()
-    resolved = resolve_failures_to_pairs(failures)
+    # Source 1: ClinicalTrials efficacy failures
+    failures     = fetch_clinicaltrials_negatives()
+    ct_negatives = build_negatives_from_ct(failures)
+    log.info(f"ClinicalTrials negatives resolved: {len(ct_negatives)}")
 
-    neg_df = pd.DataFrame(resolved)
+    # Source 2: ChEMBL Phase 3 never approved
+    chembl_negatives = fetch_chembl_phase3_negatives()
+    log.info(f"ChEMBL Phase 3 negatives: {len(chembl_negatives)}")
+
+    # Combine
+    all_negatives = ct_negatives + chembl_negatives
+    neg_df = pd.DataFrame(all_negatives)
+
+    if not neg_df.empty:
+        neg_df.drop_duplicates(subset=["drug_id", "disease_id"], inplace=True)
+        # Remove any pair that also appears in positives
+        pos_keys = set(zip(pos_df["drug_id"], pos_df["disease_id"]))
+        neg_df = neg_df[
+            ~neg_df.apply(
+                lambda r: (r["drug_id"], r["disease_id"]) in pos_keys, axis=1
+            )
+        ]
+
     neg_df.to_csv("data/ground_truth/negatives_raw.csv", index=False)
-    log.info(f"Saved {len(neg_df)} failure pairs → data/ground_truth/negatives_raw.csv")
+    log.info(f"Saved {len(neg_df)} negatives → data/ground_truth/negatives_raw.csv")
 
-    # ── SUMMARY ───────────────────────────────────────────────────────────────
-    log.info("\n" + "=" * 60)
-    log.info("DONE — next steps for bio person")
-    log.info("=" * 60)
+    # ── SUMMARY ───────────────────────────────────────────────
     log.info(f"""
-  Positives saved : {len(pos_df)}  →  data/ground_truth/positives_raw.csv
-  Negatives saved : {len(neg_df)}  →  data/ground_truth/negatives_raw.csv
-
-  POSITIVES — open the CSV and:
-    1. Delete rows where drug_type = Protein / Antibody / Enzyme
-    2. Delete rows where disease looks like a common disease (diabetes etc.)
-    3. Make sure disease_id column starts with ORPHA: for every row
-    4. Save as: data/ground_truth/positives_verified.csv
-
-  NEGATIVES — open the CSV and:
-    1. Read each why_stopped — confirm it is a genuine efficacy failure
-    2. Fill in disease_id column (ORPHA:xxxxx) from orphanet.net for each row
-    3. Delete rows where needs_manual_review=True that you cannot verify
-    4. Save as: data/ground_truth/negatives_verified.csv
-
-  Then run:
-    python scripts/load_verified_ground_truth.py
+DONE.
+  Positives : {len(pos_df)}  →  data/ground_truth/positives_raw.csv
+  Negatives : {len(neg_df)}  →  data/ground_truth/negatives_raw.csv
     """)

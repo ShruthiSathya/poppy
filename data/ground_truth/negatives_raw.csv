@@ -1,0 +1,225 @@
+drug_id,drug_name,disease_id,disease_name,nct_id,why_stopped,source,label
+CHEMBL1542,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201576,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL635,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201828,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1456,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL960,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201560,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL556,,Orphanet:848,beta-Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL934,,EFO:0003099,Cushing Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1287853,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL43452,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1789941,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200574,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201185,,EFO:1001485,Acromegaly,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1680,,EFO:1001485,Acromegaly,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3349607,,EFO:1001485,Acromegaly,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1078178,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL532,,EFO:1000690,Epidermolysis Bullosa,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL384467,,EFO:1001875,Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL550348,,EFO:1001996,Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL467,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200796,,EFO:1001875,Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL443684,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201561,,EFO:0002430,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1743007,,EFO:1001875,Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3707295,,Orphanet:365,Glycogen Storage Disease Type II,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL269732,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4068611,,EFO:0003099,Cushing Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3989986,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3989987,,EFO:1001875,Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297611,,Orphanet:77259,Gaucher Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297611,,Orphanet:77261,Gaucher Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297770,,EFO:1001875,Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1078178,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL160,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL635,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2107914,,MONDO:0015183,Short Bowel Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL43452,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1789941,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201560,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201576,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2021423,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1287853,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297761,,MONDO:0015183,Short Bowel Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297799,,MONDO:0004737,Homocystinuria,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4298207,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594312,,MONDO:0009179,Epidermolysis Bullosa Dystrophica,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL5267842,,EFO:1001485,Acromegaly,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2107856,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL467,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201599,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2109334,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3545185,,MONDO:0044903,Primary Myelofibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594310,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4563522,,MONDO:0015183,Short Bowel Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4650514,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3833307,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4650267,,MONDO:0009179,Epidermolysis Bullosa Dystrophica,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL398435,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL256997,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108703,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL596802,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL589390,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2107874,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108735,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2141296,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1568698,,MONDO:0001734,Tuberous Sclerosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL602,,MONDO:0016239,Cystinosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1234886,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL454801,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL454801,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1431,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL701,,MONDO:0015626,Charcot-Marie-Tooth Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL24,,MONDO:0007947,Marfan Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL177,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1639,,MONDO:0007947,Marfan Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200381,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1485,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1095097,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL384467,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL384467,,MONDO:0017816,Immunoglobulin Light-chain Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL384467,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL550348,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL550348,,MONDO:0015104,Porphyria Cutanea Tarda,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL252556,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL252556,,MONDO:0100339,Friedreich Ataxia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1513,,MONDO:0017314,Ehlers-Danlos Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1543,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL434394,,MONDO:0007947,Marfan Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201149,,MONDO:0015626,Charcot-Marie-Tooth Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1029,,MONDO:0002412,Glycogen Storage Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1029,,MONDO:0018982,"Niemann-Pick Disease, Type C",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL852,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL852,,MONDO:0017816,Immunoglobulin Light-chain Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL852,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2356097,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL90593,,MONDO:0015129,Addison Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1272,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3989401,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1581,,MONDO:0007947,Marfan Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL635,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL635,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL468,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL468,,Orphanet:848,beta-Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1682,,MONDO:0015626,Charcot-Marie-Tooth Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1393,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4303669,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL779,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200544,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200796,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL930,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL744,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL744,,MONDO:0008458,Spinocerebellar Ataxias,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL600,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL995,,MONDO:0007947,Marfan Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL715,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL131,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1654,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200630,,MONDO:0001676,"Protoporphyria, Erythropoietic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3989857,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL796,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200574,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1200574,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108074,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108134,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108195,,MONDO:0016486,beta-Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201497,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1767407,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL405821,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL848,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL231779,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201824,,MONDO:0002412,Glycogen Storage Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1237023,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201587,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201567,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201496,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201621,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201621,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1743007,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2109377,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL110458,,MONDO:0010526,Fabry Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL191,,MONDO:0007947,Marfan Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL398707,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL70,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL742,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL27810,,MONDO:0020066,Ehlers-Danlos Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL595,,MONDO:0100339,Friedreich Ataxia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL300138,,MONDO:0020066,Ehlers-Danlos Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201772,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL6067481,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3707446,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2364639,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1812161,,MONDO:0100339,Friedreich Ataxia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3039538,,MONDO:0010604,Hemophilia B,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3039537,,MONDO:0019148,Wolman Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3137355,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3545066,,EFO:1001485,Acromegaly,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3833345,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1236970,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL577294,,MONDO:0018982,"Niemann-Pick Disease, Type C",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL165,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL283800,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL283800,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1213492,,MONDO:0010311,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1213492,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3786673,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1086997,,MONDO:0010526,Fabry Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297603,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297611,,MONDO:0010526,Fabry Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1256772,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297678,,MONDO:0018982,"Niemann-Pick Disease, Type C",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297722,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297730,,MONDO:0010602,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297730,,MONDO:0010604,Hemophilia B,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297731,,MONDO:0010651,Menkes Kinky Hair Syndrome,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297754,,MONDO:0010602,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297754,,MONDO:0010604,Hemophilia B,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297754,,MONDO:0018660,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297760,,MONDO:0007369,"Coproporphyria, Hereditary",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297760,,MONDO:0008294,"Porphyria, Acute Intermittent",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297760,,Orphanet:95157,"Porphyrias, Hepatic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297849,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297918,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297953,,MONDO:0010602,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297953,,MONDO:0010604,Hemophilia B,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297988,,MONDO:0010674,Mucopolysaccharidosis II,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4298086,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4298128,,MONDO:0009061,Cystic Fibrosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4299940,,Orphanet:846,alpha-Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4299940,,Orphanet:848,beta-Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4298194,,MONDO:0010602,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297581,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594329,,MONDO:0002412,Glycogen Storage Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594565,,MONDO:0010674,Mucopolysaccharidosis II,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594605,,MONDO:0010602,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4802160,,MONDO:0001676,"Protoporphyria, Erythropoietic",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL744,,MONDO:0016163,Spinocerebellar Ataxias,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL180570,,MONDO:0019019,Osteogenesis Imperfecta,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108793,,MONDO:0010526,Fabry Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL192,,Orphanet:848,beta-Thalassemia,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1115,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4297611,,MONDO:0018150,Gaucher Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594336,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4650267,,EFO:1000692,Epidermolysis Bullosa Dystrophica,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1255653,,MONDO:0009861,Phenylketonurias,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL5095293,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL5095307,,EFO:0004991,Myasthenia Gravis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL5095095,,MONDO:0007739,Huntington Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL5315016,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL112,,MONDO:0001586,Mucopolysaccharidosis I,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL17157,,MONDO:0001586,Mucopolysaccharidosis I,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3989727,,MONDO:0018150,Gaucher Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL521,,MONDO:0001586,Mucopolysaccharidosis I,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108574,,MONDO:0010602,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2108574,,MONDO:0018660,Hemophilia A,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL848,,EFO:1001875,Amyloidosis,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1201636,,MONDO:0019438,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL83,,MONDO:0010679,"Muscular Dystrophy, Duchenne",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL2021423,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3039537,,EFO:0700022,Wolman Disease,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3707382,,MONDO:0019249,Mucopolysaccharidoses,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL3989987,,MONDO:0018634,"Amyloidosis, Familial",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL4594312,,EFO:1000692,Epidermolysis Bullosa Dystrophica,,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0
+CHEMBL1568,,MONDO:0011382,"Anemia, Sickle Cell",,Max phase 3 — never approved,ChEMBL_phase3_not_approved,0

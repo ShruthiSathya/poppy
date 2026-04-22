@@ -1,0 +1,224 @@
+drug_id,drug_name,disease_id,disease_name,efo_id,mesh_heading,max_phase,source,label
+CHEMBL1276308,,EFO:0003099,Cushing Syndrome,EFO:0003099,Cushing Syndrome,4.0,ChEMBL_approved,1
+CHEMBL1201780,,Orphanet:927,Hyperammonemia,Orphanet:927,Hyperammonemia,4.0,ChEMBL_approved,1
+CHEMBL3039545,,Orphanet:848,beta-Thalassemia,Orphanet:848,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL550348,,Orphanet:848,beta-Thalassemia,Orphanet:848,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL1201824,,Orphanet:365,Glycogen Storage Disease Type II,Orphanet:365,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL1795071,,EFO:0002430,Primary Myelofibrosis,EFO:0002430,Primary Myelofibrosis,4.0,ChEMBL_approved,1
+CHEMBL1201775,,Orphanet:238583,Phenylketonurias,Orphanet:238583,Phenylketonurias,4.0,ChEMBL_approved,1
+CHEMBL211471,,EFO:0004991,Myasthenia Gravis,EFO:0004991,Myasthenia Gravis,4.0,ChEMBL_approved,1
+CHEMBL1200503,,EFO:1001485,Acromegaly,EFO:1001485,Acromegaly,4.0,ChEMBL_approved,1
+CHEMBL5314382,,EFO:1001485,Acromegaly,EFO:1001485,Acromegaly,4.0,ChEMBL_approved,1
+CHEMBL1201184,,EFO:1001485,Acromegaly,EFO:1001485,Acromegaly,4.0,ChEMBL_approved,1
+CHEMBL1200480,,EFO:1001485,Acromegaly,EFO:1001485,Acromegaly,4.0,ChEMBL_approved,1
+CHEMBL1201515,,EFO:1001485,Acromegaly,EFO:1001485,Acromegaly,4.0,ChEMBL_approved,1
+CHEMBL295698,,EFO:0003099,Cushing Syndrome,EFO:0003099,Cushing Syndrome,4.0,ChEMBL_approved,1
+CHEMBL3707358,,EFO:1001380,Niemann-Pick Diseases,EFO:1001380,Niemann-Pick Diseases,4.0,ChEMBL_approved,1
+CHEMBL2103837,,EFO:1001875,Amyloidosis,EFO:1001875,Amyloidosis,4.0,ChEMBL_approved,1
+CHEMBL2105675,,EFO:1001875,Amyloidosis,EFO:1001875,Amyloidosis,4.0,ChEMBL_approved,1
+CHEMBL1029,,Orphanet:77259,Gaucher Disease,Orphanet:77259,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL2110588,,Orphanet:77259,Gaucher Disease,Orphanet:77259,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL2110588,,Orphanet:77261,Gaucher Disease,Orphanet:77261,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL1201632,,Orphanet:77259,Gaucher Disease,Orphanet:77259,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL1201632,,Orphanet:77261,Gaucher Disease,Orphanet:77261,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL4297820,,EFO:0004991,Myasthenia Gravis,EFO:0004991,Myasthenia Gravis,4.0,ChEMBL_approved,1
+CHEMBL4297551,,EFO:0004991,Myasthenia Gravis,EFO:0004991,Myasthenia Gravis,4.0,ChEMBL_approved,1
+CHEMBL2105745,,MONDO:0004739,"Urea Cycle Disorders, Inborn",MONDO:0004739,"Urea Cycle Disorders, Inborn",4.0,ChEMBL_approved,1
+CHEMBL2105745,,Orphanet:79167,"Urea Cycle Disorders, Inborn",Orphanet:79167,"Urea Cycle Disorders, Inborn",4.0,ChEMBL_approved,1
+CHEMBL1908360,,HP:0009720,Tuberous Sclerosis,HP:0009720,Tuberous Sclerosis,4.0,ChEMBL_approved,1
+CHEMBL1201010,,MONDO:0015128,Addison Disease,MONDO:0015128,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL1650,,MONDO:0015128,Addison Disease,MONDO:0015128,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL2021430,,MONDO:0015128,Addison Disease,MONDO:0015128,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL384467,,MONDO:0015128,Addison Disease,MONDO:0015128,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL1337,,MONDO:0004741,Tyrosinemias,MONDO:0004741,Tyrosinemias,4.0,ChEMBL_approved,1
+CHEMBL812,,EFO:0004991,Myasthenia Gravis,EFO:0004991,Myasthenia Gravis,4.0,ChEMBL_approved,1
+CHEMBL635,,MONDO:0015128,Addison Disease,MONDO:0015128,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL131,,MONDO:0015128,Addison Disease,MONDO:0015128,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL1746,,Orphanet:79167,"Urea Cycle Disorders, Inborn",Orphanet:79167,"Urea Cycle Disorders, Inborn",4.0,ChEMBL_approved,1
+CHEMBL2104987,,MONDO:0015183,Short Bowel Syndrome,MONDO:0015183,Short Bowel Syndrome,4.0,ChEMBL_approved,1
+CHEMBL1201621,,MONDO:0015183,Short Bowel Syndrome,MONDO:0015183,Short Bowel Syndrome,4.0,ChEMBL_approved,1
+CHEMBL95889,,MONDO:0004737,Homocystinuria,MONDO:0004737,Homocystinuria,4.0,ChEMBL_approved,1
+CHEMBL2109624,,MONDO:0019740,"Purpura, Thrombotic Thrombocytopenic",MONDO:0019740,"Purpura, Thrombotic Thrombocytopenic",4.0,ChEMBL_approved,1
+CHEMBL4297216,,EFO:0002430,Primary Myelofibrosis,EFO:0002430,Primary Myelofibrosis,4.0,ChEMBL_approved,1
+CHEMBL4594320,,Orphanet:365,Glycogen Storage Disease Type II,Orphanet:365,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL4594607,,MONDO:0019740,"Purpura, Thrombotic Thrombocytopenic",MONDO:0019740,"Purpura, Thrombotic Thrombocytopenic",4.0,ChEMBL_approved,1
+CHEMBL4594265,,Orphanet:95157,"Porphyrias, Hepatic",Orphanet:95157,"Porphyrias, Hepatic",4.0,ChEMBL_approved,1
+CHEMBL2109624,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",4.0,ChEMBL_approved,1
+CHEMBL70927,,EFO:1001996,Thalassemia,EFO:1001996,Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL1201780,,HP:0001987,Hyperammonemia,HP:0001987,Hyperammonemia,4.0,ChEMBL_approved,1
+CHEMBL1795071,,HP:0011974,Primary Myelofibrosis,HP:0011974,Primary Myelofibrosis,4.0,ChEMBL_approved,1
+CHEMBL238804,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL1908360,,EFO:1000634,Tuberous Sclerosis,EFO:1000634,Tuberous Sclerosis,4.0,ChEMBL_approved,1
+CHEMBL1237119,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL1737,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL1111,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL957,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL494,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL1029,,Orphanet:365,Glycogen Storage Disease Type II,Orphanet:365,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL748,,EFO:0004991,Myasthenia Gravis,EFO:0004991,Myasthenia Gravis,4.0,ChEMBL_approved,1
+CHEMBL962,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL779,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL1746,,HP:0001987,Hyperammonemia,HP:0001987,Hyperammonemia,4.0,ChEMBL_approved,1
+CHEMBL1746,,MONDO:0004739,"Urea Cycle Disorders, Inborn",MONDO:0004739,"Urea Cycle Disorders, Inborn",4.0,ChEMBL_approved,1
+CHEMBL1200728,,EFO:0004991,Lambert-Eaton Myasthenic Syndrome,EFO:0004991,Lambert-Eaton Myasthenic Syndrome,4.0,ChEMBL_approved,1
+CHEMBL3039545,,EFO:1001996,beta-Thalassemia,EFO:1001996,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL354077,,EFO:0004991,Lambert-Eaton Myasthenic Syndrome,EFO:0004991,Lambert-Eaton Myasthenic Syndrome,4.0,ChEMBL_approved,1
+CHEMBL3301611,,EFO:0004991,Lambert-Eaton Myasthenic Syndrome,EFO:0004991,Lambert-Eaton Myasthenic Syndrome,4.0,ChEMBL_approved,1
+CHEMBL190461,,EFO:1000634,Tuberous Sclerosis,EFO:1000634,Tuberous Sclerosis,4.0,ChEMBL_approved,1
+CHEMBL4297216,,HP:0011974,Primary Myelofibrosis,HP:0011974,Primary Myelofibrosis,4.0,ChEMBL_approved,1
+CHEMBL4297536,,EFO:1001875,Amyloidosis,EFO:1001875,Amyloidosis,4.0,ChEMBL_approved,1
+CHEMBL4297537,,EFO:1001875,Amyloidosis,EFO:1001875,Amyloidosis,4.0,ChEMBL_approved,1
+CHEMBL4594311,,Orphanet:848,beta-Thalassemia,Orphanet:848,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL4594328,,MONDO:0009179,Epidermolysis Bullosa Dystrophica,MONDO:0009179,Epidermolysis Bullosa Dystrophica,4.0,ChEMBL_approved,1
+CHEMBL4594328,,Orphanet:303,Epidermolysis Bullosa Dystrophica,Orphanet:303,Epidermolysis Bullosa Dystrophica,4.0,ChEMBL_approved,1
+CHEMBL4594329,,Orphanet:365,Glycogen Storage Disease Type II,Orphanet:365,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL4594265,,EFO:0001421,"Porphyrias, Hepatic",EFO:0001421,"Porphyrias, Hepatic",4.0,ChEMBL_approved,1
+CHEMBL1201865,,MONDO:0018150,Gaucher Disease,MONDO:0018150,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL256997,,MONDO:0010311,"Muscular Dystrophy, Duchenne",MONDO:0010311,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL256997,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL70927,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL70927,,MONDO:0016486,beta-Thalassemia,MONDO:0016486,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL2103837,,MONDO:0019438,"Amyloidosis, Familial",MONDO:0019438,"Amyloidosis, Familial",4.0,ChEMBL_approved,1
+CHEMBL2105675,,MONDO:0019438,"Amyloidosis, Familial",MONDO:0019438,"Amyloidosis, Familial",4.0,ChEMBL_approved,1
+CHEMBL1201780,,MONDO:0011628,Propionic Acidemia,MONDO:0011628,Propionic Acidemia,4.0,ChEMBL_approved,1
+CHEMBL2105684,,MONDO:0018975,Neurofibromatosis 1,MONDO:0018975,Neurofibromatosis 1,4.0,ChEMBL_approved,1
+CHEMBL1964120,,MONDO:0018150,Gaucher Disease,MONDO:0018150,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL5723563,,MONDO:0018150,Gaucher Disease,MONDO:0018150,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL2010601,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL2103870,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL1908360,,MONDO:0001734,Tuberous Sclerosis,MONDO:0001734,Tuberous Sclerosis,4.0,ChEMBL_approved,1
+CHEMBL1201010,,MONDO:0015129,Addison Disease,MONDO:0015129,Addison Disease,4.0,ChEMBL_approved,1
+CHEMBL1256137,,MONDO:0016239,Cystinosis,MONDO:0016239,Cystinosis,4.0,ChEMBL_approved,1
+CHEMBL413,,MONDO:0001734,Tuberous Sclerosis,MONDO:0001734,Tuberous Sclerosis,4.0,ChEMBL_approved,1
+CHEMBL529,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL158,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL71,,MONDO:0037939,Porphyrias,MONDO:0037939,Porphyrias,4.0,ChEMBL_approved,1
+CHEMBL1201891,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL550348,,MONDO:0016486,beta-Thalassemia,MONDO:0016486,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL467,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL5315124,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL689,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL1029,,MONDO:0018150,Gaucher Disease,MONDO:0018150,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL117785,,MONDO:0007739,Huntington Disease,MONDO:0007739,Huntington Disease,4.0,ChEMBL_approved,1
+CHEMBL877,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL1747,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL930,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL600,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL1550,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL2108214,,MONDO:0010526,Fabry Disease,MONDO:0010526,Fabry Disease,4.0,ChEMBL_approved,1
+CHEMBL2108888,,MONDO:0010526,Fabry Disease,MONDO:0010526,Fabry Disease,4.0,ChEMBL_approved,1
+CHEMBL1201431,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL2109137,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL2109205,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL2108175,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL2108175,,MONDO:0018660,Hemophilia A,MONDO:0018660,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL2110588,,MONDO:0018150,Gaucher Disease,MONDO:0018150,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL2107355,,MONDO:0010526,Fabry Disease,MONDO:0010526,Fabry Disease,4.0,ChEMBL_approved,1
+CHEMBL1201775,,MONDO:0009861,Phenylketonurias,MONDO:0009861,Phenylketonurias,4.0,ChEMBL_approved,1
+CHEMBL1201822,,MONDO:0009661,Mucopolysaccharidosis VI,MONDO:0009661,Mucopolysaccharidosis VI,4.0,ChEMBL_approved,1
+CHEMBL1201822,,MONDO:0019249,Mucopolysaccharidoses,MONDO:0019249,Mucopolysaccharidoses,4.0,ChEMBL_approved,1
+CHEMBL1201824,,MONDO:0009290,Glycogen Storage Disease Type II,MONDO:0009290,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL1201826,,MONDO:0010674,Mucopolysaccharidosis II,MONDO:0010674,Mucopolysaccharidosis II,4.0,ChEMBL_approved,1
+CHEMBL1201632,,MONDO:0018150,Gaucher Disease,MONDO:0018150,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL1201595,,MONDO:0011758,Mucopolysaccharidosis I,MONDO:0011758,Mucopolysaccharidosis I,4.0,ChEMBL_approved,1
+CHEMBL1201595,,MONDO:0011759,Mucopolysaccharidosis I,MONDO:0011759,Mucopolysaccharidosis I,4.0,ChEMBL_approved,1
+CHEMBL1201595,,MONDO:0011760,Mucopolysaccharidosis I,MONDO:0011760,Mucopolysaccharidosis I,4.0,ChEMBL_approved,1
+CHEMBL1201595,,MONDO:0019249,Mucopolysaccharidoses,MONDO:0019249,Mucopolysaccharidoses,4.0,ChEMBL_approved,1
+CHEMBL2108278,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL2108286,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL441738,,MONDO:0001676,"Protoporphyria, Erythropoietic",MONDO:0001676,"Protoporphyria, Erythropoietic",4.0,ChEMBL_approved,1
+CHEMBL2108319,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL2108334,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL2108334,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL2108348,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL2108676,,MONDO:0009659,Mucopolysaccharidosis IV,MONDO:0009659,Mucopolysaccharidosis IV,4.0,ChEMBL_approved,1
+CHEMBL2108676,,MONDO:0018938,Mucopolysaccharidosis IV,MONDO:0018938,Mucopolysaccharidosis IV,4.0,ChEMBL_approved,1
+CHEMBL2108676,,MONDO:0019249,Mucopolysaccharidoses,MONDO:0019249,Mucopolysaccharidoses,4.0,ChEMBL_approved,1
+CHEMBL1200577,,MONDO:0016239,Cystinosis,MONDO:0016239,Cystinosis,4.0,ChEMBL_approved,1
+CHEMBL3137326,,MONDO:0007739,Huntington Disease,MONDO:0007739,Huntington Disease,4.0,ChEMBL_approved,1
+CHEMBL3544914,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL4303525,,MONDO:0100339,Friedreich Ataxia,MONDO:0100339,Friedreich Ataxia,4.0,ChEMBL_approved,1
+CHEMBL3707382,,MONDO:0009662,Mucopolysaccharidosis VII,MONDO:0009662,Mucopolysaccharidosis VII,4.0,ChEMBL_approved,1
+CHEMBL2348780,,MONDO:0010311,"Muscular Dystrophy, Duchenne",MONDO:0010311,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL2348780,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL3707358,,MONDO:0011871,"Niemann-Pick Disease, Type B",MONDO:0011871,"Niemann-Pick Disease, Type B",4.0,ChEMBL_approved,1
+CHEMBL3833393,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL3990034,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL3990039,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL3990039,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL3990039,,MONDO:0018660,Hemophilia A,MONDO:0018660,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL1201441,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL4101807,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL4297566,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL4297734,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL4297762,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL4297801,,MONDO:0010526,Fabry Disease,MONDO:0010526,Fabry Disease,4.0,ChEMBL_approved,1
+CHEMBL4297802,,MONDO:0009861,Phenylketonurias,MONDO:0009861,Phenylketonurias,4.0,ChEMBL_approved,1
+CHEMBL4297579,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4297873,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4297945,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4297945,,MONDO:0018660,Hemophilia A,MONDO:0018660,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4298062,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL4594311,,MONDO:0016486,beta-Thalassemia,MONDO:0016486,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL4594320,,MONDO:0009290,Glycogen Storage Disease Type II,MONDO:0009290,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL4594584,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4594598,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL4594603,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4594607,,MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",MONDO:0018896,"Purpura, Thrombotic Thrombocytopenic",4.0,ChEMBL_approved,1
+CHEMBL56021,,MONDO:0018982,"Niemann-Pick Disease, Type C",MONDO:0018982,"Niemann-Pick Disease, Type C",4.0,ChEMBL_approved,1
+CHEMBL5095275,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL5095049,,EFO:0002430,Primary Myelofibrosis,EFO:0002430,Primary Myelofibrosis,4.0,ChEMBL_approved,1
+CHEMBL70927,,Orphanet:848,beta-Thalassemia,Orphanet:848,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL157101,,EFO:0003099,Cushing Syndrome,EFO:0003099,Cushing Syndrome,4.0,ChEMBL_approved,1
+CHEMBL1201828,,MONDO:0100244,"Hemoglobinuria, Paroxysmal",MONDO:0100244,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL1201595,,MONDO:0001586,Mucopolysaccharidosis I,MONDO:0001586,Mucopolysaccharidosis I,4.0,ChEMBL_approved,1
+CHEMBL2108334,,MONDO:0018660,Hemophilia A,MONDO:0018660,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL2219411,,EFO:0002430,Primary Myelofibrosis,EFO:0002430,Primary Myelofibrosis,4.0,ChEMBL_approved,1
+CHEMBL354077,,EFO:0020094,Lambert-Eaton Myasthenic Syndrome,EFO:0020094,Lambert-Eaton Myasthenic Syndrome,4.0,ChEMBL_approved,1
+CHEMBL3301611,,EFO:0020094,Lambert-Eaton Myasthenic Syndrome,EFO:0020094,Lambert-Eaton Myasthenic Syndrome,4.0,ChEMBL_approved,1
+CHEMBL3833340,,MONDO:0009061,Cystic Fibrosis,MONDO:0009061,Cystic Fibrosis,4.0,ChEMBL_approved,1
+CHEMBL3707393,,EFO:0003099,Cushing Syndrome,EFO:0003099,Cushing Syndrome,4.0,ChEMBL_approved,1
+CHEMBL3707358,,MONDO:0100464,Niemann-Pick Diseases,MONDO:0100464,Niemann-Pick Diseases,4.0,ChEMBL_approved,1
+CHEMBL3989986,,MONDO:0100244,"Hemoglobinuria, Paroxysmal",MONDO:0100244,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4297986,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL4298149,,MONDO:0018982,"Niemann-Pick Disease, Type C",MONDO:0018982,"Niemann-Pick Disease, Type C",4.0,ChEMBL_approved,1
+CHEMBL4298211,,MONDO:0100244,"Hemoglobinuria, Paroxysmal",MONDO:0100244,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4297536,,MONDO:0018634,"Amyloidosis, Familial",MONDO:0018634,"Amyloidosis, Familial",4.0,ChEMBL_approved,1
+CHEMBL4594328,,EFO:1000692,Epidermolysis Bullosa Dystrophica,EFO:1000692,Epidermolysis Bullosa Dystrophica,4.0,ChEMBL_approved,1
+CHEMBL4594329,,MONDO:0009290,Glycogen Storage Disease Type II,MONDO:0009290,Glycogen Storage Disease Type II,4.0,ChEMBL_approved,1
+CHEMBL4650241,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL4650269,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL5095401,,MONDO:0100244,"Hemoglobinuria, Paroxysmal",MONDO:0100244,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL5095451,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL5095474,,MONDO:0011382,"Anemia, Sickle Cell",MONDO:0011382,"Anemia, Sickle Cell",4.0,ChEMBL_approved,1
+CHEMBL5095474,,Orphanet:848,beta-Thalassemia,Orphanet:848,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL5315069,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL5315071,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL5315075,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL5315076,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL5315078,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL5315078,,MONDO:0010604,Hemophilia B,MONDO:0010604,Hemophilia B,4.0,ChEMBL_approved,1
+CHEMBL5315048,,EFO:0004991,Myasthenia Gravis,EFO:0004991,Myasthenia Gravis,4.0,ChEMBL_approved,1
+CHEMBL1743073,,EFO:0001361,Pulmonary Arterial Hypertension,EFO:0001361,Pulmonary Arterial Hypertension,4.0,ChEMBL_approved,1
+CHEMBL5723563,,Orphanet:77259,Gaucher Disease,Orphanet:77259,Gaucher Disease,4.0,ChEMBL_approved,1
+CHEMBL413,,HP:0009720,Tuberous Sclerosis,HP:0009720,Tuberous Sclerosis,4.0,ChEMBL_approved,1
+CHEMBL1029,,EFO:1001380,Niemann-Pick Diseases,EFO:1001380,Niemann-Pick Diseases,4.0,ChEMBL_approved,1
+CHEMBL930,,EFO:0700081,Short Bowel Syndrome,EFO:0700081,Short Bowel Syndrome,4.0,ChEMBL_approved,1
+CHEMBL2104987,,EFO:0700081,Short Bowel Syndrome,EFO:0700081,Short Bowel Syndrome,4.0,ChEMBL_approved,1
+CHEMBL1201621,,EFO:0700081,Short Bowel Syndrome,EFO:0700081,Short Bowel Syndrome,4.0,ChEMBL_approved,1
+CHEMBL5314380,,EFO:1001485,Acromegaly,EFO:1001485,Acromegaly,4.0,ChEMBL_approved,1
+CHEMBL4298126,,MONDO:0010602,Hemophilia A,MONDO:0010602,Hemophilia A,4.0,ChEMBL_approved,1
+CHEMBL4297213,,MONDO:0001676,"Protoporphyria, Erythropoietic",MONDO:0001676,"Protoporphyria, Erythropoietic",4.0,ChEMBL_approved,1
+CHEMBL4298211,,MONDO:0100245,"Hemoglobinuria, Paroxysmal",MONDO:0100245,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4250860,,MONDO:0100245,"Hemoglobinuria, Paroxysmal",MONDO:0100245,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4250860,,MESH:D006457,"Hemoglobinuria, Paroxysmal",,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4594316,,MONDO:0100245,"Hemoglobinuria, Paroxysmal",MONDO:0100245,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4594316,,MESH:D006457,"Hemoglobinuria, Paroxysmal",,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL4650226,,EFO:0004248,Amyloidosis,EFO:0004248,Amyloidosis,4.0,ChEMBL_approved,1
+CHEMBL4650226,,EFO:1001875,Amyloidosis,EFO:1001875,Amyloidosis,4.0,ChEMBL_approved,1
+CHEMBL4650241,,MONDO:0010311,"Muscular Dystrophy, Duchenne",MONDO:0010311,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
+CHEMBL4650246,,EFO:1000692,Epidermolysis Bullosa Dystrophica,EFO:1000692,Epidermolysis Bullosa Dystrophica,4.0,ChEMBL_approved,1
+CHEMBL4650246,,MONDO:0017612,"Epidermolysis Bullosa, Junctional",MONDO:0017612,"Epidermolysis Bullosa, Junctional",4.0,ChEMBL_approved,1
+CHEMBL5095401,,MONDO:0100245,"Hemoglobinuria, Paroxysmal",MONDO:0100245,"Hemoglobinuria, Paroxysmal",4.0,ChEMBL_approved,1
+CHEMBL5095474,,EFO:1001996,beta-Thalassemia,EFO:1001996,beta-Thalassemia,4.0,ChEMBL_approved,1
+CHEMBL6068400,,MONDO:0010679,"Muscular Dystrophy, Duchenne",MONDO:0010679,"Muscular Dystrophy, Duchenne",4.0,ChEMBL_approved,1
